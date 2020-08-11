@@ -1,0 +1,118 @@
+[
+	{
+		"acreage": "70",
+		"address": "Time city 2",
+		"dienDonGia": 0,
+		"id": 628,
+		"image": [
+			"https://nhadepphucuong.com/wp-content/uploads/2018/06/THIET-KE-BIET-THU-MAI-THAI-9.jpg",
+			"https://vinavic.vn/wp-content/uploads/2016/09/mau-thiet-ke-nha-biet-thu-dep-2-tang-BT1623-11.jpg",
+			"https://kientrucnhavietmoi.com/wp-content/uploads/2019/06/2-6.jpg",
+			"https://i0.wp.com/mauthietkenhadep.net/wp-content/uploads/2018/04/mau-nha-dep-1.jpg",
+			"https://phanthinh.vn/wp-content/uploads/2018/10/thiet-ke-nha-dep-t%E1%BA%A1i-quang-ninh-2.jpg"
+		],
+		"internetDonGia": 0,
+		"nuocDonGia": 0,
+		"people": "2",
+		"phongDonGia": 1,
+		"price": "70,000,00",
+		"rentState": true,
+		"sex": 1,
+		"tDien": "",
+		"tInternet": "",
+		"tNuoc": "",
+		"type": 1,
+		"utilities": [0, 1, 2],
+		"coords": {
+			"latitude": 22.445972,
+			"longitude": 21.254003
+		}
+	},
+	{
+		"acreage": "70",
+		"address": "Time city 2",
+		"dienDonGia": 0,
+		"id": 629,
+		"image": [
+			"https://nhadepphucuong.com/wp-content/uploads/2018/06/THIET-KE-BIET-THU-MAI-THAI-9.jpg",
+			"https://vinavic.vn/wp-content/uploads/2016/09/mau-thiet-ke-nha-biet-thu-dep-2-tang-BT1623-11.jpg",
+			"https://kientrucnhavietmoi.com/wp-content/uploads/2019/06/2-6.jpg",
+			"https://i0.wp.com/mauthietkenhadep.net/wp-content/uploads/2018/04/mau-nha-dep-1.jpg",
+			"https://phanthinh.vn/wp-content/uploads/2018/10/thiet-ke-nha-dep-t%E1%BA%A1i-quang-ninh-2.jpg"
+		],
+		"internetDonGia": 0,
+		"nuocDonGia": 0,
+		"people": "2",
+		"phongDonGia": 1,
+		"price": "7,000,000",
+		"rentState": true,
+		"sex": 1,
+		"tDien": "",
+		"tInternet": "",
+		"tNuoc": "",
+		"type": 1,
+		"utilities": [0, 1, 2],
+		"coords": {
+			"latitude": 22.445972,
+			"longitude": 21.254003
+		}
+	},
+	{
+		"acreage": "70",
+		"address": "Time city 2",
+		"dienDonGia": 0,
+		"id": 636,
+		"image": [
+			"https://nhadepphucuong.com/wp-content/uploads/2018/06/THIET-KE-BIET-THU-MAI-THAI-9.jpg",
+			"https://vinavic.vn/wp-content/uploads/2016/09/mau-thiet-ke-nha-biet-thu-dep-2-tang-BT1623-11.jpg",
+			"https://kientrucnhavietmoi.com/wp-content/uploads/2019/06/2-6.jpg",
+			"https://i0.wp.com/mauthietkenhadep.net/wp-content/uploads/2018/04/mau-nha-dep-1.jpg",
+			"https://phanthinh.vn/wp-content/uploads/2018/10/thiet-ke-nha-dep-t%E1%BA%A1i-quang-ninh-2.jpg"
+		],
+		"internetDonGia": 0,
+		"nuocDonGia": 0,
+		"people": "2",
+		"phongDonGia": 1,
+		"price": "70,000,00",
+		"rentState": true,
+		"sex": 1,
+		"tDien": "",
+		"tInternet": "",
+		"tNuoc": "",
+		"type": 1,
+		"utilities": [0, 1, 2],
+		"coords": {
+			"latitude": 22.445972,
+			"longitude": 20.34003
+		}
+	},
+	{
+		"acreage": "70",
+		"address": "Time city 2",
+		"dienDonGia": 0,
+		"id": 674,
+		"image": [
+			"https://nhadepphucuong.com/wp-content/uploads/2018/06/THIET-KE-BIET-THU-MAI-THAI-9.jpg",
+			"https://vinavic.vn/wp-content/uploads/2016/09/mau-thiet-ke-nha-biet-thu-dep-2-tang-BT1623-11.jpg",
+			"https://kientrucnhavietmoi.com/wp-content/uploads/2019/06/2-6.jpg",
+			"https://i0.wp.com/mauthietkenhadep.net/wp-content/uploads/2018/04/mau-nha-dep-1.jpg",
+			"https://phanthinh.vn/wp-content/uploads/2018/10/thiet-ke-nha-dep-t%E1%BA%A1i-quang-ninh-2.jpg"
+		],
+		"internetDonGia": 0,
+		"nuocDonGia": 0,
+		"people": "2",
+		"phongDonGia": 1,
+		"price": "70,00000",
+		"rentState": true,
+		"sex": 1,
+		"tDien": "",
+		"tInternet": "",
+		"tNuoc": "",
+		"type": 1,
+		"utilities": [0, 1, 2],
+		"coords": {
+			"latitude": 22.445972,
+			"longitude": 20.224003
+		}
+	}
+]
