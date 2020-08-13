@@ -1,4 +1,5 @@
 import axiosClient from "./apiClient";
+import { headers } from "./urlAPI";
 
 const uploadApi = {
     avatar: (file) => {
@@ -6,15 +7,14 @@ const uploadApi = {
         const config = {
             headers: {
                 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryAsfOWiFipv4WAqFQ',
-                
             }
         }
-        return axiosClient.post(url, file, config);
+        return axiosClient.post(url, file, headers());
     },
 
-    rooms: (params) => {
+    rooms: (data) => {
         const url = `/upload/rooms`;
-        return axiosClient.post(url, params);
+        return axiosClient.post(url, data);
     },
 
 }

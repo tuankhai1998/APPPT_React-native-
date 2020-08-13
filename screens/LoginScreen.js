@@ -12,7 +12,7 @@ const { width, height } = Dimensions.get('window');
 
 
 const LoginScreen = () => {
-    const navigation = useNavigation();
+
     const [login, setLogin] = useState(true);
     const [userName, setUserName] = useState('');
     const [passWord, setPassWord] = useState('');
@@ -22,29 +22,16 @@ const LoginScreen = () => {
     const loginUser = useSelector(state => state.user)
     const dispatch = useDispatch();
 
-    const storeData = async (value) => {
-        try {
-            const jsonValue = JSON.stringify(value)
-            await AsyncStorage.multiSet([
-                ['token', value.token],
-                ['user', jsonValue]
-            ])
-        } catch (e) {
-            console.log(e)
-        }
-    }
+
 
     useEffect(() => {
         dispatch(checkLoginReq({ userName, passWord }))
     }, [userName, passWord]);
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         dispatch(checkLoginReq({ userName, passWord }))
         if (userName && passWord) {
             if (loginUser.login) {
-                storeData(loginUser);
-                navigation.navigate('Root');
-            } else {
                 alert('Tên đăng nhập hoặc mật khẩu sai ')
             }
         } else {
@@ -75,7 +62,7 @@ const LoginScreen = () => {
             <ImageBackground source={{ uri: 'https://divui.com/blog/wp-content/uploads/2016/11/nha-hang-bangkok-view-dep.jpg' }} style={styles.background} >
                 <View style={{ position: 'absolute', top: '30%', left: '10%' }}>
 
-                    <Text type="Bold" style={{ fontSize: 40, color: '#fff' }}>Wlcome</Text>
+                    <Text type="Bold" style={{ fontSize: 40, color: '#fff' }}>Welcome</Text>
                     <Text style={{ color: '#fff', width: width * 3 / 4 }}>It is a long established fact that a reader will be distracted by the</Text>
                 </View>
             </ImageBackground>

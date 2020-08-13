@@ -8,10 +8,8 @@ const addLikeProduct = (product) => {
 }
 
 export const addLikeProductReq = payload => dispatch => {
-    let { data, token } = payload
-
     try {
-        likeApi.add(payload).then(res => dispatch(selectAllLikeReq({ userID: data.id_user, token })));
+        likeApi.add(payload).then(res => dispatch(selectAllLikeReq({ userID: payload.id_user })));
     } catch (error) {
         console.log(error)
     }
@@ -26,7 +24,7 @@ const deleteProductInLikeList = (index) => {
 
 export const deleteProductInLikeReq = payload => dispatch => {
     try {
-        likeApi.delete(payload).then(res => dispatch(deleteProductInLikeList(payload.data.index)));
+        likeApi.delete(payload).then(res => dispatch(deleteProductInLikeList(payload.index)));
     } catch (error) {
         console.log(error)
     }
@@ -52,7 +50,7 @@ export const selectAllLikeReq = (payload) => dispatch => {
 }
 
 
-export const checlLikeProduct = (id) => {
+export const checkLikeProduct = (id) => {
     return {
         type: 'CHECK_LIKE_PRODUCT',
         payload: id

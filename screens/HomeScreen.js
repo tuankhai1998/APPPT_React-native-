@@ -8,12 +8,15 @@ import Icon from '../components/Icon';
 import Colors from '../constants/Colors';
 import { background2 } from '../constants/image';
 import { fetchAllProducts } from '../actions/productAction';
+import { getToken } from '../api/urlAPI';
 
 
 export default function HomeScreen({ navigation }) {
     const products = useSelector(state => state.product);
     const token = useSelector(state => state.user.token)
     const dispatch = useDispatch()
+
+
     const productOnPress = (data) => {
         navigation.push('Product', {
             thue: false,
@@ -21,10 +24,12 @@ export default function HomeScreen({ navigation }) {
         })
     }
 
-
     React.useEffect(() => {
+        getToken()
         dispatch(fetchAllProducts(token));
     }, []);
+
+
     return (
         <View style={styles.container}>
             <HeaderComponent title="Trang chủ" input={true} home />
@@ -36,7 +41,6 @@ export default function HomeScreen({ navigation }) {
                     justifyContent: "center"
                 }}
             >
-
 
                 <View style={styles.container, styles.homeContainer}>
                     <Swiper

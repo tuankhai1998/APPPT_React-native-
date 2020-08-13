@@ -1,4 +1,5 @@
 import axiosClient from "./apiClient";
+import { headers } from "./urlAPI";
 
 const loginApi = {
     checkLogin: (params) => {
@@ -8,7 +9,7 @@ const loginApi = {
 
     update: (params) => {
         const url = `/user/${params.id}`;
-        return axiosClient.post(url, params.newUser);
+        return axiosClient.post(url, params.newUser, headers());
     },
 
     getProfile: (id) => {

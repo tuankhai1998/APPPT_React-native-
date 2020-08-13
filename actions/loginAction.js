@@ -29,6 +29,12 @@ export const updateUser = (user) => {
     }
 }
 
+export const logOut = () => {
+    return {
+        type: 'SIGN_OUT',
+    }
+}
+
 export const updateUserReq = user => dispatch => {
     try {
         loginApi.update(user).then(res => dispatch(updateUser(user)));

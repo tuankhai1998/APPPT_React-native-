@@ -27,7 +27,6 @@ const AroundMap = () => {
     const [longitude, setLongitude] = useState(0);
 
 
-    const token = useSelector(state => state.user.token)
     const aroundItem = useSelector(state => state.around);
     const dispatch = useDispatch();
 
@@ -40,17 +39,13 @@ const AroundMap = () => {
 
     useEffect(() => {
         getLocationAsync();
-        console.log(aroundItem)
-        // console.log(aroundItem[0].latitude)
 
     }, []);
 
 
     const getItemAround = async (longitude, latitude) => {
-        dispatch(fetchProductAround({ longitude, latitude, token }));
+        dispatch(fetchProductAround({ longitude, latitude }));
     }
-
-
 
     const getLocationAsync = async () => {
         let { status } = await Location.requestPermissionsAsync();
@@ -64,9 +59,6 @@ const AroundMap = () => {
         setLatitude(location.coords.latitude);
         setLongitude(location.coords.longitude);
     }
-
-
-
 
     useEffect(() => {
         mapAnimation.addListener(({ value }) => {

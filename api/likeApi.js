@@ -3,29 +3,19 @@ import { headers } from "./urlAPI";
 
 const likeApi = {
     get: (payload) => {
-        console.log(payload)
-        const { userID, token } = payload;
-        const url = `/like/${userID}`;
-        return axiosClient.get(url, {
-            headers: headers(token)
-        });
+        const url = `/like/${payload}`;
+        return axiosClient.get(url);
     },
 
-    add: (params) => {
-        console.log(params)
-        const { data, token } = params;
+    add: (data) => {
+        console.log(headers())
         const url = `/like`;
-        return axiosClient.post(url, data, {
-            headers: headers(token)
-        });
+        return axiosClient.post(url, data, headers());
     },
 
-    delete: (params) => {
-        const { data, token } = params;
-        const url = `/like/${data.id_user}`;
-        return axiosClient.post(url, data, {
-            headers: headers(token)
-        });
+    delete: (payload) => {
+        const url = `/like/${payload.id_user}`;
+        return axiosClient.post(url, payload, headers());
     }
 
 

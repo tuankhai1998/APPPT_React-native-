@@ -1,15 +1,10 @@
 import axiosClient from "./apiClient";
-import Axios from "axios";
-import { baseUrl } from "./urlAPI";
+import { baseUrl, headers } from "./urlAPI";
 
 const roomsApi = {
-    getAll: (token) => {
+    getAll: () => {
         const url = '/rooms';
-        return axiosClient.get(url, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
+        return axiosClient.get(url);
     },
 
     get: (id) => {
@@ -19,11 +14,7 @@ const roomsApi = {
 
     getAround: (payload) => {
         const url = `/rooms`;
-        return axiosClient.post(url, payload, {
-            headers: {
-                'Authorization': `Bearer ${payload.token}`
-            }
-        });
+        return axiosClient.post(url, payload);
     },
 
     getRent: (userID) => {
@@ -33,7 +24,7 @@ const roomsApi = {
 
     delRent: (params) => {
         const url = `/rents/${params}`
-        return axiosClient.delete(url);
+        return axiosClient.delete(url, headers());
     },
 
     update: (data) => {
@@ -43,13 +34,7 @@ const roomsApi = {
 
     store: (data) => {
         const url = `/rents`;
-        return fetch(`${baseUrl}${url}`, {
-            method: 'POST',
-            body: data,
-            headers: {
-                'content-type': 'multipart/form-data',
-            }
-        });
+        return axiosClient.post(url, data, headers())
 
     }
 }

@@ -2,10 +2,10 @@ import { useNavigation } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import React, { useEffect, useState } from 'react';
-import { Dimensions, Image, ImageBackground, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, ImageBackground, Platform, StyleSheet, TouchableOpacity, View, AsyncStorage } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser, updateUserReq } from '../actions/loginAction';
+import { getUser, updateUserReq, logOut } from '../actions/loginAction';
 import { baseUrl } from '../api/urlAPI';
 import HeaderComponent from '../components/HeaderComponent';
 import PrimaryButton from '../components/PrimaryButton';
@@ -50,8 +50,6 @@ const ProfileScreen = () => {
                 quality: 1,
             });
             if (!result.cancelled) {
-
-
                 let formData = new FormData();
                 formData.append('avatar', createImageData(result));
                 formData.append('userID', user.id)
@@ -84,8 +82,13 @@ const ProfileScreen = () => {
     };
 
 
-    const onLogout = () => {
-        navigation.navigate("Login")
+    const onLogout = async () => {
+        try {
+            await AsyncStorage.removeItem("user")
+            dispatch(logOut())
+        } catch (error) {
+            alert(error)
+        }
     }
 
     const handelUpdateUser = () => {

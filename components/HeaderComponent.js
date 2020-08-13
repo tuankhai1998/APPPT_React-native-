@@ -23,7 +23,7 @@ const HeaderComponent = ({ home, title, back, right, onclick, search }) => {
                     <Header back title={title} />
 
                 ) : right ? (
-                    <Header right title={title} />
+                    <Header right={() => right()} title={title} />
                 ) : search ? <Header back title={title} search /> : (
                     <Header title={title} />
                 )
@@ -62,7 +62,7 @@ const Header = ({ home, title, right, back, onclick, search }) => {
                     {search ? (<View style={styles.inputForm}>
                         <TextInput style={[styles.input, { color: '#fff' }]} value={searchText} onChangeText={(text) => setSearchText(text)} placeholder="Nhập nơi muốn tìm" autoFocus={true} />
                         <Icon name="ios-search" size={30} color={Colors.primaryColor} />
-                    </View>) : right ? <HeaderRight right={() => alert('log out')} /> : (<TouchableOpacity
+                    </View>) : right ? <HeaderRight right={() => right()} /> : (<TouchableOpacity
                         onPress={() => {
                             navigation.navigate('HomeScreen', {
                                 screen: 'Search'

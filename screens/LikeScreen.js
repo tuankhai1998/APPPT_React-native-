@@ -9,33 +9,26 @@ import HomeItem from '../components/HomeItem';
 import { background2 } from '../constants/image';
 
 
-// const products = require('../location.json');
-
-
-
 
 const LikeScreen = () => {
     const navigation = useNavigation();
     const listItems = useSelector(state => state.like);
     const userID = useSelector(state => state.user.id);
-    const token = useSelector(state => state.user.token);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getUser())
-        dispatch(selectAllLikeReq({ userID, token }))
+        dispatch(selectAllLikeReq(userID))
     }, []);
 
     const handleDelete = (id, index) => {
         let payload = {
-            data: { id_room: id, id_user: userID, index },
-            token
+            id_room: id, id_user: userID, index
         }
         dispatch(deleteProductInLikeReq(payload))
     }
 
     return (
-
         <View style={styles.container}>
             <HeaderComponent title="Yêu thích" />
             <ImageBackground

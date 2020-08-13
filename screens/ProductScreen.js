@@ -55,12 +55,8 @@ const ProductScreen = () => {
 
 
     const handleAddLike = () => {
-
         let payload = {
-            data: {
-                id_user: user.id, id_room: data.id
-            },
-            token: user.token
+            id_user: user.id, id_room: data.id
         }
         dispatch(addLikeProductReq(payload));
     }

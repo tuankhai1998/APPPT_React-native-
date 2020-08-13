@@ -14,9 +14,9 @@ const showAllProduct = (listProduct) => {
     }
 }
 
-export const fetchAllProducts = (token) => (dispatch) => {
+export const fetchAllProducts = () => (dispatch) => {
     try {
-        roomsApi.getAll(token).then(res => dispatch(showAllProduct(res))).catch(
+        roomsApi.getAll().then(res => dispatch(showAllProduct(res))).catch(
             error => console.log(error)
         );
 
