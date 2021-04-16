@@ -65,7 +65,7 @@ const Root = () => {
     return (
         <Stack.Navigator>
             {
-                token ? <Stack.Screen name="Root" component={BottomTabNavigator} /> : <Stack.Screen
+                !token ? <Stack.Screen name="Root" component={BottomTabNavigator} /> : <Stack.Screen
                     name="Login"
                     component={LoginScreen}
                     options={{

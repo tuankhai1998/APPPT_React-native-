@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         justifyContent: "center",
         borderRadius: 5,
-
         overflow: 'hidden',
         paddingRight: 10,
 
